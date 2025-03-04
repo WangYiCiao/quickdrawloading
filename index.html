@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Draw - 稍候片刻</title>
     <style>
         .quick-draw-style {
@@ -12,15 +13,15 @@
             padding: 20px;
         }
         #container {
-            position: relative;/* 設置相對定位，以便後續圖片的絕對定位 /
-            width: 400px; / 與畫布寬度一致 /
-            margin: 20px auto; / 居中顯示 /
+            position: relative;
+            width: 400px;
+            margin: 20px auto;
         }
         #drawing-area {
             border: 4px solid black;
-            display: block; / 確保畫布是塊級元素 /
-            position: relative; / 相對定位，用於堆疊圖片 /
-            z-index: 1; / 確保畫布在圖片上方 /
+            display: block;
+            position: relative;
+            z-index: 1;
         }
 
         #myCanvas {
@@ -31,6 +32,26 @@
             font-size: 1.5em;
             font-weight: bold;
         }
+
+        /* 新增的 CSS 樣式 */
+        body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .side {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .side img {
+            width: 80px;
+            height: auto;
+            visibility: hidden;
+        }
     </style>
 </head>
 <body class="quick-draw-style">
@@ -40,12 +61,12 @@
 <div class="side" id="left-side"></div>
 
 <div id="container">
+    <img id="background-image" src="images/Whiteboard.png" alt="Whiteboard">
     <canvas id="myCanvas" width="400" height="300"></canvas>
-    <img id="background-image" src="Whiteboard.png" alt="Whiteboard">
 </div>
 
 <!-- 右側圖片區域 -->
-<div class="side" id="right-side"></div
+<div class="side" id="right-side"></div>
 
 <p id="message">稍等一下，請在這塊區域塗鴉！</p>
 
@@ -60,7 +81,7 @@
 
     function preloadImage(src, callback) {
         const img = new Image();
-        img.src = "imgs/" + src;
+        img.src = "images/" + src; // 假設圖片都在 "images" 資料夾中
         img.onload = () => callback(img);
     }
 
@@ -75,6 +96,7 @@
             }
         });
     });
+
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
     let isDrawing = false;
