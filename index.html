@@ -35,8 +35,11 @@
         }
 
         #message {
-            font-size: 1.5em;
-            font-weight: bold;
+            position: absolute; /* 绝对定位 */
+            bottom : 0;            /* 顶部对齐 */
+            left: 50%;         /* 水平居中 */
+            transform: translateX(-50%); /* 使其真正居中 */
+            font-size: 1.3em;     /* 设置字体大小为 2em */
         }
 
         /* 新增的 CSS 樣式 */
@@ -60,11 +63,13 @@
         }
 
         #top-message {
-            font-size: 3em;
-            font-weight: bold;
-            color: black;
-            margin-bottom: 20px;
+            position: absolute; /* 绝对定位 */
+            top: 0;            /* 顶部对齐 */
+            left: 50%;         /* 水平居中 */
+            transform: translateX(-50%); /* 使其真正居中 */
+            font-size: 1.5em;     /* 设置字体大小为 em */
         }
+
     </style>
 </head>
 <body class="quick-draw-style">
