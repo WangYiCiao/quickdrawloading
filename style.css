@@ -9,7 +9,7 @@
 #container {
     position: relative;
     width: 800px;
-    margin: 20px auto;
+    margin: 50px auto;
 }
 
 #drawing-area {
@@ -29,10 +29,11 @@
 /* 下面這邊把 canvas 調小，並往內推 50px */
 #myCanvas {
     position: absolute;
-    top: 1.97%;
+    top: 16.9%;
     left: 7.06%;
     width: 86.28%;
-    height: 88.15%;
+    height: 74.75%;
+    border: 2px dashed #666; /*   加個虛線框示範畫區 */
     /* 實際畫布解析度已由 width/height 屬性指定 */
 }
 
@@ -109,7 +110,27 @@ body {
 #title {
     font-size: 1.5em;
     font-weight: bold;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     color: #000000; /* 深色文字 */
 }
 
+#toolbar {
+    position: absolute;
+    top: 70px;           /* 根据你的 #title 底下空白调整 */
+    left: 7.06%;         /* 与 canvas 左边对齐 */
+    width: 86.28%;       /* 与 canvas 同宽 */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 8px;
+    background: rgba(255, 209, 57,1);
+    border-radius: 4px;
+    z-index: 5;
+}
+#toolbar label {
+    font-size: 0.9em;
+}
+#toolbar button {
+    font-size: 0.9em;
+    padding: 4px 8px;
+}
