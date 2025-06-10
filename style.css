@@ -84,7 +84,7 @@ body {
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 /* Logo 圖片 */
 #top-bar .logo {
@@ -103,5 +103,13 @@ body {
 body {
     padding-top: 60px; /* 同 header 的 height */
     background-color: #fff; /* 白底 */
+}
+
+/* title格式 */
+#title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #000000; /* 深色文字 */
 }
 
