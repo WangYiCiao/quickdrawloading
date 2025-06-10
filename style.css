@@ -113,7 +113,10 @@ body {
     margin-bottom: 50px;
     color: #000000; /* 深色文字 */
 }
-
+#title-container {
+    position: relative;
+    margin-bottom: 25px;   /* 保留原先標題下方空間 */
+}
 #toolbar {
     position: absolute;
     top: 70px;          /* 根據 #title 下方空白調整 */
@@ -140,10 +143,12 @@ body {
     height: 32px;
     margin: 0 auto;
     margin-top: 21px;
-    position: relative;
-    top: -100px;                /* 向下移 5px */
-    left: -225px;              /* 向右移 20px */
-    transform: rotateZ(45deg);
+    position: absolute;
+    top: 80%;              /* 垂直 50% */
+    left: 0;               /* 緊貼左邊 */
+    transform: translateY(-50%) rotateZ(45deg);
+    width: 32px;
+    height: 32px;
     -o-transform: rotateZ(45deg);
     -ms-transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
