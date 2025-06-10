@@ -17,6 +17,7 @@
     display: block;
     position: relative;
     z-index: 1;
+    cursor: url('images/hand2.png') 16 16, auto;
 }
 
 #background-image {
