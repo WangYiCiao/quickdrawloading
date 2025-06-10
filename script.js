@@ -5,6 +5,7 @@ const images = [
     "apple.png", "basketball.png", "bike.png", "CoatHanger.png", "cup.png",
     "glass.png", "Helicopters.png", "light.png", "pizza.png", "snag1.png"
 ];
+
 const leftSide  = document.getElementById("left-side");
 const rightSide = document.getElementById("right-side");
 function preloadImage(src, callback) {
