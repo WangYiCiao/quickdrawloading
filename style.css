@@ -8,7 +8,7 @@
 
 #container {
     position: relative;
-    width: 400px;
+    width: 800px;
     margin: 20px auto;
 }
 
@@ -19,17 +19,21 @@
     z-index: 1;
 }
 
-#myCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
 #background-image {
+    display: block;
     width: 100%;
     height: auto;
     pointer-events: none;
+}
+
+/* 下面這邊把 canvas 調小，並往內推 50px */
+#myCanvas {
+    position: absolute;
+    top: 1.97%;
+    left: 7.06%;
+    width: 86.28%;
+    height: 88.15%;
+    /* 實際畫布解析度已由 width/height 屬性指定 */
 }
 
 #message {
