@@ -1,89 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Quick Draw - 稍候片刻</title>
-    <style>
-        .quick-draw-style {
-            background-color: #f8d147;
-            font-family: sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-        #container {
-            position: relative;
-            width: 400px;
-            margin: 20px auto;
-        }
-        #drawing-area {
-            border: 4px solid black;
-            display: block;
-            position: relative;
-            z-index: 1;
-        }
-
-        #myCanvas {
-            position: absolute; /* 絕對定位，使其與圖片重疊 */
-            top: 0;
-            left: 0;
-            z-index: 2; /* 確保畫布在圖片上方 */
-        }
-        #background-image {
-            width: 100%;
-            height: auto;
-            pointer-events: none;
-        }
-
-        #message {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.3em;
-        }
-
-        body {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        .side {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-        .side img {
-            width: 80px;
-            height: auto;
-            visibility: hidden;
-        }
-
-        #top-message {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.5em;
-        }
-
-    </style>
+    <link rel="icon" href="images/hand.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body class="quick-draw-style">
-<p id="top-message">Quick, Draw!系統正在進行緊急修復，請稍候再試</p>
+<header id="top-bar">
+    <img src="images/headqd.png" alt="Logo" class="logo">
+    <p>系統正在進行緊急修復，請稍候再試</p>
+</header>
 
 <div class="side" id="left-side"></div>
 
-
-<img id="hand-image" src="images/hand.png" alt="Hand" style="position: absolute; top: 0; left: 0; width: 50px; height: auto;">
-
+<img id="hand-image" src="images/hand.png" alt="Hand" style="position: absolute; top: 0; left: 0; width: 50px; height: auto;"/>
 
 <div id="container">
-    <img id="background-image" src="images/Whiteboard.png" alt="Whiteboard">
+    <img id="background-image" src="images/Whiteboard.png" alt="Whiteboard"/>
     <canvas id="myCanvas" width="400" height="300"></canvas>
 </div>
 
@@ -91,63 +26,6 @@
 
 <p id="message">稍等一下，請在這塊區域塗鴉！</p>
 
-<script>
-    // JavaScript 程式碼 (與之前相同)
-    const images = [
-        "apple.png", "basketball.png", "bike.png", "CoatHanger.png", "cup.png",
-        "glass.png", "Helicopters.png", "light.png", "pizza.png", "snag1.png"
-    ];
-
-    const leftSide = document.getElementById("left-side");
-    const rightSide = document.getElementById("right-side");
-
-    function preloadImage(src, callback) {
-        const img = new Image();
-        img.src = "images/" + src; // 假設圖片都在 "images" 資料夾中
-        img.onload = () => callback(img);
-    }
-
-    images.forEach((imgSrc, index) => {
-        preloadImage(imgSrc, (loadedImg) => {
-            loadedImg.style.visibility = "visible";
-
-            if (index % 2 === 0) {
-                leftSide.appendChild(loadedImg);
-            } else {
-                rightSide.appendChild(loadedImg);
-            }
-        });
-    });
-
-    const canvas = document.getElementById('myCanvas');
-    const ctx = canvas.getContext('2d');
-    let isDrawing = false;
-    let lastX = 0;
-    let lastY = 0;
-
-    canvas.addEventListener('mousedown', (e) => {
-        isDrawing = true;
-        lastX = e.offsetX;
-        lastY = e.offsetY;
-    });
-
-    canvas.addEventListener('mousemove', (e) => {
-        if (!isDrawing) return;
-        ctx.beginPath();
-        ctx.moveTo(lastX, lastY);
-        ctx.lineTo(e.offsetX, e.offsetY);
-        ctx.stroke();
-        lastX = e.offsetX;
-        lastY = e.offsetY;
-    });
-
-    canvas.addEventListener('mouseup', () => {
-        isDrawing = false;
-    });
-
-    canvas.addEventListener('mouseout', () => {
-        isDrawing = false;
-    });
-</script>
+<script src="script.js"></script>
 </body>
 </html>

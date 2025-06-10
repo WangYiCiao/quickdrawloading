@@ -1,0 +1,103 @@
+.quick-draw-style {
+    background-color: #ffffff;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+#container {
+    position: relative;
+    width: 400px;
+    margin: 20px auto;
+}
+
+#drawing-area {
+    border: 4px solid black;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+#myCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#background-image {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+#message {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3em;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.side img {
+    width: 80px;
+    height: auto;
+    visibility: hidden;
+}
+
+#top-message {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+}
+/* 新增頂部區塊 */
+#top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 66px;                   /* 黃色高度 66px */
+    background-color: #ffd139;      /* 黃色 */
+    box-shadow: 0 10px 0px rgba(0,0,0,0.1); /* 灰色陰影高度 10px */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Logo 圖片 */
+#top-bar .logo {
+    height: 65%;   /* 剛好跟 header 一樣高 (＝60px) */
+    width: auto;    /* 自動等比縮放寬度 */
+    margin-left: 20px;  /* 左邊距離 */
+}
+
+/* 讓文字置中而不被 logo 擠開 */
+#top-bar p {
+    margin: 0 auto; /* 左右 auto，文字會水平置中 */
+    font-size: 1.5em;
+}
+
+/* 推開下面的內容，免得被固定頂欄蓋到 */
+body {
+    padding-top: 60px; /* 同 header 的 height */
+    background-color: #fff; /* 白底 */
+}
+
