@@ -30,10 +30,10 @@
 /* 下面這邊把 canvas 調小，並往內推 50px */
 #myCanvas {
     position: absolute;
-    top: 16.9%;
+    top: 18.3%;
     left: 7.06%;
     width: 86.28%;
-    height: 74.75%;
+    height: 73.45%;
     /* border: 2px dashed #666;   加個虛線框示範畫區 */
     /* 實際畫布解析度已由 width/height 屬性指定 */
 }
