@@ -109,7 +109,7 @@ body {
 
 /* title格式 */
 #title {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
     margin-bottom: 50px;
     color: #000000; /* 深色文字 */
@@ -120,7 +120,7 @@ body {
 }
 #toolbar {
     position: absolute;
-    top: 70px;          /* 根據 #title 下方空白調整 */
+    top: 80px;          /* 根據 #title 下方空白調整 */
     left: 7.06%;        /* 與 canvas 左邊對齊 */
     width: 86.28%;      /* 與 canvas 等寬 */
     display: flex;
